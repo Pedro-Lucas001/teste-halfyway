@@ -1,0 +1,14 @@
+# Variáveis de ambiente e chaves de API
+.env
+**/.env
+
+# Cache e ambiente virtual do Python
+__pycache__/
+*.py[cod]
+venv/
+.venv/
+
+# Arquivos do sistema e editor
+.DS_Store
+Thumbs.db
+.vscode/

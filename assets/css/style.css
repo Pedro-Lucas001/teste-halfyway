@@ -1,0 +1,247 @@
+:root {
+    --bg-page: #F8FAFC;
+    --bg-card: #FFFFFF;
+    --bg-dark: #0F172A;
+    --primary-green: #10B981;
+    --primary-green-light: #ECFDF5;
+    --text-main: #0F172A;
+    --text-muted: #64748B;
+    --border-color: #E2E8F0;
+    --radius: 14px;
+    --shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    min-height: 100vh;
+    padding-bottom: 80px; /* Espaço para o menu inferior no mobile */
+  }
+  
+  /* Container Responsivo */
+  .app-container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  @media (min-width: 768px) {
+    .app-container {
+      max-width: 960px;
+      padding: 32px;
+    }
+  }
+  
+  /* Cabeçalho */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+  }
+  
+  .brand {
+    font-size: 1.25rem;
+    font-weight: 800;
+    color: var(--bg-dark);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .brand span {
+    color: var(--primary-green);
+  }
+  
+  /* Cards */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+  }
+  
+  .card-dark {
+    background: var(--bg-dark);
+    color: #FFFFFF;
+    border: none;
+  }
+  
+  /* Formulários e Botões */
+  .form-group {
+    margin-bottom: 16px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text-main);
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  
+  .form-control:focus {
+    border-color: var(--primary-green);
+  }
+  
+  .btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.2s;
+    text-decoration: none;
+  }
+  
+  .btn:hover { opacity: 0.9; }
+  .btn-dark { background: var(--bg-dark); color: #FFFFFF; }
+  .btn-green { background: var(--primary-green); color: #FFFFFF; }
+  .btn-outline { background: transparent; border: 1px solid var(--border-color); color: var(--text-main); }
+  
+  /* Badges e Score */
+  .badge-green {
+    background: var(--primary-green-light);
+    color: var(--primary-green);
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+  }
+  
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .stat-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    padding: 14px;
+    text-align: center;
+  }
+  
+  .stat-box strong {
+    display: block;
+    font-size: 1.4rem;
+    color: var(--bg-dark);
+  }
+  
+  .stat-box span {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+  }
+  
+  .score-ring {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    border: 6px solid var(--primary-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #FFFFFF;
+  }
+  
+  /* Lista de Vagas (CRUD) */
+  .vaga-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+  }
+  
+  .vaga-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  
+  /* Barra de Navegação Inferior (Mobile-First do Figma) */
+  .bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-around;
+    padding: 12px 0;
+    z-index: 100;
+  }
+  
+  .nav-item {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  
+  .nav-item.active {
+    color: var(--primary-green);
+  }
+  
+  /* Widget do Chatbot */
+  .chat-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-height: 260px;
+    overflow-y: auto;
+    margin-bottom: 12px;
+    padding-right: 4px;
+  }
+  
+  .msg {
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    max-width: 85%;
+  }
+  
+  .msg-bot {
+    background: var(--primary-green-light);
+    color: var(--bg-dark);
+    align-self: flex-start;
+  }
+  
+  .msg-user {
+    background: var(--bg-dark);
+    color: #FFFFFF;
+    align-self: flex-end;
+  }
+  
+  .chat-input-group {
+    display: flex;
+    gap: 8px;
+  }
